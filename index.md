@@ -13,9 +13,14 @@ This is R-sızlar's [Progress Journal website](https://pjournal.github.io/boun01
 ### Group Assignment: New York City Airbnb Open Data - Kaggle
 
 
-### Bonus Work: purrr Package Tutorial
+### Bonus Work: [purrr](https://purrr.tidyverse.org/) Package Tutorial
 
 
 ### Final Project
 - [Project Proposal, Summary Of the Data and Explanations:](https://pjournal.github.io/boun01g-r-sizlar/r-sizlar_project_proposal.html)
 <br>Data: [*Kaggle*](https://www.kaggle.com/yemregundogmus/turkey-political-opinions?select=datav2.csv). 
+
+
+
+
+
