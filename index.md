@@ -14,7 +14,7 @@ This is R-sızlar's [Progress Journal website](https://pjournal.github.io/boun01
 - New York City Airbnb Open Data: [Kaggle](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)
 - Analysis using dplyr, ggplot2 and rmarkdown:
 [NYC - Airbnb Analysis](https://pjournal.github.io/boun01g-r-sizlar/nyc_rsizlar.html)
-- Shiny app for the analysis: [Inclusive View NYC - Airbnb 2019](https://tugrulozsoy.shinyapps.io/nyc_rsizlar_shiny/)
+- Shiny app for the analysis: [Inclusive View of NYC - Airbnb 2019](https://tugrulozsoy.shinyapps.io/nyc_rsizlar_shiny/)
 
 
 ### Bonus Work: [purrr](https://purrr.tidyverse.org/) Package Tutorial
