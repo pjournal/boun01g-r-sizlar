@@ -11,7 +11,11 @@ This is R-sızlar's [Progress Journal website](https://pjournal.github.io/boun01
 - [Berker Can](https://pjournal.github.io/boun01-brkrcann/)
 
 ### Group Assignment: New York City Airbnb Open Data - Kaggle
-
+- Analysis using dplyr, ggplot2 and rmarkdown
+[NYC - Airbnb Analysis](https://pjournal.github.io/boun01g-dol-r/NYC_assignment/group_assignment.html)
+- Shiny app for the analysis: [XXX]()
+- Source code for the Shiny app: [XXX]()
+- New York City Airbnb Open Data: [Kaggle](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)
 
 ### Bonus Work: [purrr](https://purrr.tidyverse.org/) Package Tutorial
 
