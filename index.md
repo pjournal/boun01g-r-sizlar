@@ -26,8 +26,7 @@ This is R-sızlar's [Progress Journal website](https://pjournal.github.io/boun01
 - [Exploratory Data Analysis](https://pjournal.github.io/boun01g-r-sizlar/Exist_2019_IDM_Analysis.html)
 <br> Using dplyr and ggplot2 packages mainly.
 - Final Project: 
-<br>[HTML Format]()
-<br> [PDF Format]()
+<br>[HTML Format](https://pjournal.github.io/boun01g-r-sizlar/final_project_rsizlar.html)
+<br> [PDF Format](https://pjournal.github.io/boun01g-r-sizlar/final_project_rsizlar.html)
 - Shiny App: [EXIST 2019 IDM Overview]()
-- Presentation: [Presentation]()
-
+- Presentation: [Presentation](https://onedrive.live.com/view.aspx?resid=30E8A5F19FDAEBD!1295&ithint=file%2cpptx&authkey=!AF9_Nsi8-LjMRUM)
