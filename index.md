@@ -28,4 +28,6 @@ This is R-sızlar's [Progress Journal website](https://pjournal.github.io/boun01
 - Final Project: 
 <br>[HTML Format]()
 <br> [PDF Format]()
-- Shiny App: [XXX]()
+- Shiny App: [EXIST 2019 IDM Overview]()
+- Presentation: [Presentation]()
+
