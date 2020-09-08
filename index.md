@@ -15,6 +15,7 @@ This is R-sızlar's [Progress Journal website](https://pjournal.github.io/boun01
 - Analysis using dplyr, ggplot2 and rmarkdown:
 [NYC - Airbnb Analysis](https://pjournal.github.io/boun01g-r-sizlar/nyc_rsizlar.html)
 - Shiny app for the analysis: [Inclusive View of NYC - Airbnb 2019](https://tugrulozsoy.shinyapps.io/nyc_rsizlar_shiny/)
+- Source code for the Shiny app: [Code](nyc_assignment_app.R)
 
 
 ### Bonus Work: [purrr](https://purrr.tidyverse.org/) Package Tutorial
@@ -29,4 +30,5 @@ This is R-sızlar's [Progress Journal website](https://pjournal.github.io/boun01
 <br>[HTML Format](https://pjournal.github.io/boun01g-r-sizlar/final_project_rsizlar.html)
 <br> [PDF Format](https://pjournal.github.io/boun01g-r-sizlar/final_project_rsizlar.html)
 - Shiny App: [EXIST 2019 IDM Overview](https://tugrulozsoy.shinyapps.io/Desktop/)
+- Source code for the Shiny app: [Code](exist_2019_idm_app.R)
 - Presentation: [EXIST 2019 IDM Analysis](https://onedrive.live.com/view.aspx?resid=30E8A5F19FDAEBD!1295&ithint=file%2cpptx&authkey=!AF9_Nsi8-LjMRUM)
