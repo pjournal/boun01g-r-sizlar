@@ -1,0 +1,255 @@
+---
+title: "Purrr Package"
+author: "r-sızlar"
+date: "09-09-2020"
+output: html_document
+---
+
+## Introduction
+
+Purrr is a package that fills the missing parts in R's functional programming tools: it's built to make your pure functions purrr.
+ R's functional programming (FP) toolkit is enhanced by purrr by providing a comprehensive and consistent set of tools for working with functions and vectors.
+ If you’ve never heard of FP before, the best place to start is the family of map() functions which allow you to replace many for loops with code that is both more concise and easier to read. 
+ 
+ Purrr is the response of tidyverse to apply functions for iteration. It's one of those packages that you might have heard of, but seemed too difficult to sit down and learn. Starting with map functions and taking you on a journey that takes advantage of the list 's strength, this presentation will have you purrring in no time.
+
+![](https://pjournal.github.io/boun01g-r-sizlar/purrr.jpg)
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(tidyverse)
+```
+
+
+```{r}
+files <- list.files(path="C:/Users/froze/OneDrive/Masaüstü/RÖDEVİ/", 
+                        pattern=".csv", full.names = TRUE)
+```
+
+## Introduction to iteration
+
+Imagine reading in hundreds of files with a similar structure, and performing an action on them. We don't want to write hundreds of repetitive lines of code to read or execute the operation in all of the scripts. We want to iterate about them, instead. Iteration is the mechanism by which many inputs do the same thing.Iterating is essential to make our code efficient, and is powerful when working with lists. 
+
+The names of 16 CSV files for this exercise have been loaded into a list called data. We may use the list.files() function to build the list in our own work. Even the readr library is loaded already.
+
+```{r setup}
+# Initialize list
+all_files <- list()
+
+# For loop to read files into a list
+for(i in seq_along(files)){
+  all_files[[i]] <- read.csv(file = files[[i]])
+}
+
+# Output size of list object
+length(all_files)
+```
+
+## Iteration with purrr
+
+We've made a nice loop, but it needs a lot of code to do something as basic as adding in a list a set of files. This is where purrr joins. In one line of code, we can do the same thing as a for loop with purrr::map(). The map() function iterates over a set, and uses a different function that can be defined with the .f argument.
+
+map() takes two arguments:
+
+The first is the list over that will be iterated over
+The second is a function that will act on each element of the list
+The readr library is already loaded.
+
+```{r, message=FALSE}
+# Load purrr library
+library(purrr)
+
+# Use map to iterate
+all_files_purrr <- map(files, read_csv)
+
+# Output size of list object
+length(all_files_purrr)
+```
+## More iteration with for loops
+
+But iteration is not just for file reading; iteration can be used to perform other object behavior. First we're going to try to iterate with a loop. 
+
+We will turn each element of a list into a form of numeric data, and then place it back in the same element in the same list.
+
+We will iterate for this exercise using a for loop which takes list_of_df, which is a list of vector characters, but the characters are actually numbers! We need to convert the character vectors to numeric to allow us to perform mathematical operations on them; we can use the base R function, as.numeric() to do that.
+
+```{r}
+char_vector <- c("1", "2","3", "4")
+
+list_of_df <- list()
+
+for(i in 1:10){
+  list_of_df[[i]] <- char_vector
+}
+```
+
+```{r}
+# Check the class type of the first element
+class(list_of_df[[1]])
+
+# Change each element from a character to a number
+for(i in seq_along(list_of_df)){
+    list_of_df[[i]] <- as.numeric(list_of_df[[i]])
+}
+
+# Check the class type of the first element
+class(list_of_df[[1]])
+
+# Print out the list
+list_of_df
+
+ 
+```
+## More iteration with purrr
+
+ Now you will change each element of a list into a numeric data type and after that put all of them in same list, but we can use map() to solve problem easily instead of using a for loop. We can use map() function in Purr to create loop on the list easily, and characters will be turned numbers. We will use just one line instead of write a whole for loop.
+```{r}
+# Check the class type of the first element
+class(list_of_df[[1]]) 
+
+# Change each character element to a number
+list_of_df <- map(list_of_df, as.numeric)
+
+# Check the class type of the first element again
+class(list_of_df[[1]]) 
+
+# Print out the list
+list_of_df %>% 
+  glimpse()
+
+
+```
+
+## Pipes in map()
+
+We have to refresh our memory to understand how pipes can be used between functions. We can also use pipes inside of map() function to help you iterate a pipeline of tasks over a list of inputs. We will work with list of numbers instead of repurrrsive datasets so that we can do mathematical operations
+
+```{r}
+
+# Create a list of values from 1 through 10
+numlist <- list(1,2,3,4,5,6,7,8,9,10)
+
+# Iterate over the numlist 
+map(numlist, ~.x %>% sqrt() %>% sin())%>% 
+  glimpse()
+
+
+```
+
+## Simulating Data with Purrr
+
+When many of us are trying to solve a problem with data ,we first need to build some simulated data to see if our idea is even possible.In this exercise, we will do how this Works in Purr by simulating data for two populations,a and b, from the sites : "north", "east", and "west". Two populations will be randomly drawn from a normal distribution, with different means and standard deviations.
+
+```{r}
+
+# List of sites north, east, and west
+sites <- list("north","east","west")
+
+# Create a list of dataframes, each with a years, a, and b column
+list_of_df <-  map(sites,  
+  ~data.frame(sites = .x,
+              a = rnorm(mean = 5,   n = 200, sd = (5/2)),
+              b = rnorm(mean = 200, n = 200, sd = 15)))
+
+list_of_df%>% 
+  glimpse()
+
+
+```
+## Run a linear model
+
+With map, you can do not only calculating the square root of a number or simulating data, 
+but also iterating over different inputs to run several models, 
+each of them using the unique values of a specified list element.
+You can also repeat for the models you've run to produce the model summaries and examine the outcomes.
+
+```{r}
+
+
+# Map over the models to look at the relationship of a vs b
+list_of_df %>%
+    map(~ lm(a ~ b, data = .)) %>%
+    map(summary)
+
+```
+## Simulating data with multiple inputs using map2()
+
+
+The map() function is very effective if you need to loop over one list, 
+however, you will often need to loop over two lists simultaneously. 
+This is where map2() gets in. While map() takes the list as the .x parameter;
+ map2() takes two lists as two parameters: .x and .y.
+
+To test out map2(), you are going to produce a basic dataset, 
+with one list of numbers and one list of strings. 
+You will put these two lists unitedly and produce some simulated data.
+
+```{r}
+
+# List of 1, 2 and 3
+means <- list(1,2,3)
+
+# Create sites list
+sites <- list("north","west","east")
+
+# Map over two arguments: sites and means
+list_of_files_map2 <- map2(sites, means, ~data.frame(sites = .x,
+                             a = rnorm(mean = .y, n = 200, sd = (5/2))))
+
+list_of_files_map2%>% 
+  glimpse()
+
+
+```
+## Simulating data 3+ inputs with pmap()
+
+What if you need to loop over three lists? Is there a map3()? 
+To loop over more than two lists, whether it's three, four, or even 20, 
+you need pmap() function. However, pmap() requires our list arguments a bit differently.
+
+To use pmap(), you first need to produce a master list of all the lists we want to loop over. 
+The master list is the input for pmap(). Don't use the .x or .y, use the list names as the argument names.
+
+You are going to simulate data for the last time, using five lists as inputs, instead of two. 
+Using pmap() gives you complete control over our simulated dataset, 
+and will let you use two unique means and two unique standard deviations along with the unique sites.
+
+```{r}
+means2 <- list(0.5, 1, 1.5)
+
+sigma <- list(1, 2, 3)
+
+sigma2 <- list(0.5, 1, 1.5)
+```
+
+
+
+```{r}
+
+# Create a master list, a list of lists
+pmapinputs <- list(sites = sites, means = means, sigma = sigma, 
+                   means2 = means2, sigma2 = sigma2)
+
+# Map over the master list
+list_of_files_pmap <- pmap(pmapinputs, 
+  function(sites, means, sigma, means2, sigma2) 
+    data.frame(sites = sites,
+        a = rnorm(mean = means,  n = 200, sd = sigma),
+        b = rnorm(mean = means2, n = 200, sd = sigma2)))
+
+list_of_files_pmap%>% 
+  glimpse()
+
+
+```
+
+
+```
+
+
+
+
+
+
+
