@@ -30,7 +30,7 @@ This is R-sızlar's [Progress Journal website](https://pjournal.github.io/boun01
 <br> Using dplyr and ggplot2 packages mainly.
 - Final Project: 
 <br>[HTML Format](https://pjournal.github.io/boun01g-r-sizlar/final_project_rsizlar.html)
-<br> [PDF Format](https://pjournal.github.io/boun01g-r-sizlar/final_project_rsizlar.html)
+<br> [PDF Format](https://pjournal.github.io/boun01g-r-sizlar/final_project_rsizlar.pdf)
 - Shiny App: [EXIST 2019 IDM Overview](https://tugrulozsoy.shinyapps.io/Desktop/)
 - Source code for the Shiny app: [Code](exist_2019_idm_app.R)
 - Presentation: [EXIST 2019 IDM Analysis](https://onedrive.live.com/view.aspx?resid=30E8A5F19FDAEBD!1295&ithint=file%2cpptx&authkey=!AF9_Nsi8-LjMRUM)
