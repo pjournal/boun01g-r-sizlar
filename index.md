@@ -19,6 +19,8 @@ This is R-sızlar's [Progress Journal website](https://pjournal.github.io/boun01
 
 
 ### Bonus Work: [purrr](https://purrr.tidyverse.org/) Package Tutorial
+- Written tutorial: [HTML](https://pjournal.github.io/boun01g-r-sizlar/purrr_package_rsizlar.html)
+- Video tutorial: [Youtube](https://www.youtube.com/watch?v=OoerlbfdrRw&ab_channel=C%C3%BCneyt%C3%87ak%C4%B1r)
 
 
 ### Final Project
@@ -32,4 +34,4 @@ This is R-sızlar's [Progress Journal website](https://pjournal.github.io/boun01
 - Shiny App: [EXIST 2019 IDM Overview](https://tugrulozsoy.shinyapps.io/Desktop/)
 - Source code for the Shiny app: [Code](exist_2019_idm_app.R)
 - Presentation: [EXIST 2019 IDM Analysis](https://onedrive.live.com/view.aspx?resid=30E8A5F19FDAEBD!1295&ithint=file%2cpptx&authkey=!AF9_Nsi8-LjMRUM)
-- Video Link of Purrr Tutorial : [Video](https://www.youtube.com/watch?v=OoerlbfdrRw&ab_channel=C%C3%BCneyt%C3%87ak%C4%B1r)
+
